@@ -1,0 +1,11 @@
+.sidebar{
+    background-color: rgba(158, 158, 158, 0.05);
+    height: 600px;
+ }
+ .set-navbarr>ul>li>a:hover{
+    color: red;
+}
+.set-navbar>li>a{
+   padding: 20px 15px;
+   cursor: pointer;
+}

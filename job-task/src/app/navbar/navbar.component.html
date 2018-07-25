@@ -1,0 +1,21 @@
+<div class="col-sm-3 sidebar">
+  <ul *ngIf="data"  class="nav nav-sidebar set-navbar"> 
+    <li *ngFor="let userlist of data.addDetails" >
+      <a (click)="displayData()">{{userlist.name}}</a>
+    </li>
+  </ul>
+</div>
+
+<div class="col-xs-4">
+
+  <router-outlet></router-outlet>
+
+</div>
+
+<!-- <div class="col-xs-4" *ngIf="displaydata">
+  <ul>
+    <li>{{data.addDetails.email}}</li>
+    <li>{{data.addDetails._id}}</li>
+    <li>{{data.addDetails.gender}}</li>
+  </ul>
+</div> -->               

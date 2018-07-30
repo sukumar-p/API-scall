@@ -1,3 +1,7 @@
-<p>
-  child-navbar works!
-</p>
+<div class="col-xs-4" *ngIf="displaydata">
+  <ul>
+    <li>{{data.addDetails.email}}</li>
+    <li>{{data.addDetails._id}}</li>
+    <li>{{data.addDetails.gender}}</li>
+  </ul>
+</div> 

@@ -28,6 +28,7 @@ export class UserslistComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+        
   }
 
   getuserslist(){
@@ -48,17 +49,17 @@ export class UserslistComponent implements OnInit {
   }
 
 
-  DeleteUserlists(){
-    let i;
-    this.userlist=this.data.addDetails.splice(i,1);
-    console.log(this.userlist);
-    this.UsersListservice.deleteList  (this.userlist)
+  DeleteUserlists(userDetails){
+   console.log(userDetails);
+    this.UsersListservice.deleteList  (userDetails._id)
     .subscribe(
       (response) => {
         console.log(response);
       this.deletedData=response
         alert(this.deletedData.message);
-      
+      if(this.deletedData.status){
+        this.getuserslist();
+      }
         
 
       }

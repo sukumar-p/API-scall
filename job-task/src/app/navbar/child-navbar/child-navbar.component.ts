@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { userslistService } from '../../userslist.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,22 +12,17 @@ export class ChildNavbarComponent implements OnInit {
 
     public data : any;
     public _id : any;
+    public displaydata : boolean=false;
   constructor(
-    private  UsersListservice : userslistService
+    // private  UsersListservice : userslistService,
+    // private route : ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.UsersListservice.userslist()
-    .subscribe(
-      (response) => {
-        console.log(response);
-        this.data = response;
-        
-        console.log(this.data);
-        
-
-      }
-    )
+    
+    
   }
+
+  
 
 }

@@ -1,7 +1,7 @@
 <div class="col-sm-3 sidebar">
   <ul *ngIf="data"  class="nav nav-sidebar set-navbar"> 
     <li *ngFor="let userlist of data.addDetails" >
-      <a (click)="displayData()">{{userlist.name}}</a>
+      <a routerLink="">{{userlist.name}}</a>
     </li>
   </ul>
 </div>

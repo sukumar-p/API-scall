@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { userslistService } from '../userslist.service';
-userslistService
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,13 +10,15 @@ userslistService
 })
 export class NavbarComponent implements OnInit {
   public data : any;
+  public _id;
   public userlist : any;
   public FinalData : any;
   public displaydata : boolean = false;
   public i : any;
 
   constructor(
-    private  UsersListservice : userslistService
+    private  UsersListservice : userslistService,
+    private route : ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -30,6 +32,23 @@ export class NavbarComponent implements OnInit {
         
 
       }
+    )
+  }
+
+  displayData(){
+    this.UsersListservice.childUserlist()
+   .subscribe(
+      (response) => {
+       this._id=response;
+       console.log(this._id);
+        
+        
+        // if(this.data.addDetails._id==params._id){
+        //  this. displaydata=true;
+        // }
+        
+      }
+      
     )
   }
 

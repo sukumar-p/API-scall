@@ -18,5 +18,7 @@ constructor(
         return this.http.post("http://localhost:3001/v1/user3/deletelist",delDetails);
     }
 
-
+    childUserlist(){
+        return this.http.get("http://localhost:3001/v1/user3/childUserlist");
+    }
 }
